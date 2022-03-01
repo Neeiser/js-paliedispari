@@ -36,26 +36,14 @@ const palindromoResult = document.getElementById('palindromo-risultato');
 
 
 function controlloPalindromo(parola) {
-    let lunghezzaParola = parola.lenght;
-    let smezzatoreNumericoParola = Math.floor(lunghezzaParola/2);
     
-    for ( let i = 0; i < smezzatoreNumericoParola; i++){
-
-        let letteraParolaAvanti = parola[i];
-        let letteraParolaRitroso = parola[lunghezzaParola - 1 - i];
-
-        if (letteraParolaAvanti !== letteraParolaRitroso){
-            return false;
-        } else {
-            return true;
-        }
-    }
-};
+}
 
 
 palindromoBtn.addEventListener ('click', function(){
+    
 
-    if (controlloPalindromo(palindromoInput.value)) {
+    if () {
         palindromoResult.innerHTML = 'La parola è palindroma';
     } else {
         palindromoResult.innerHTML = 'La parola non è palindroma';
