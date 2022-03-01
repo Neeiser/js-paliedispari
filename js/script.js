@@ -16,6 +16,7 @@
 /* Palindroma */
 
 /* 
+
 -   Creo una funzione di controllo della parola 
 -   Creo una variabile "lunghezzaParola" per calcolare successivamente le singole posizioni delle lettere.
 -   Creo una variabile "smezzatoreNumericoParola" per calcolare matematicamente la metà della lunghezza della parola, 
@@ -23,21 +24,40 @@ ciò mi serve per controllare fino alla metà della parola.
 (Esempio: Nella parola "anna" mi basta controllare metà parola an- e confrontarla con l'altra metà -na).
 
 -   Creo un ciclo che paragoni la prima lettera con l'ultima (ad ogni iterazione): 
-"letteraParolaAvanti" passa alla successiva e 
-"letteraParolaRitroso" alla precedente.
+    "letteraParolaAvanti" passa alla successiva e 
+    "letteraParolaRitroso" alla precedente.
 
-   
 */
+
+const palindromoInput = document.getElementById('palindromo-input');
+const palindromoBtn = document.getElementById('palindromo-btn');
+const palindromoResult = document.getElementById('palindromo-risultato');
+
+
+
 function controlloPalindromo(parola) {
     let lunghezzaParola = parola.lenght;
     let smezzatoreNumericoParola = Math.floor(lunghezzaParola/2);
-    let letteraParolaAvanti = parola[i];
-    let letteraParolaRitroso = parola[len - 1 - i];
-
+    
     for ( let i = 0; i < smezzatoreNumericoParola; i++){
+
+        let letteraParolaAvanti = parola[i];
+        let letteraParolaRitroso = parola[lunghezzaParola - 1 - i];
+
         if (letteraParolaAvanti !== letteraParolaRitroso){
             return false;
+        } else {
+            return true;
         }
     }
-    return true;
-}
+};
+
+
+palindromoBtn.addEventListener ('click', function(){
+
+    if (controlloPalindromo(palindromoInput.value)) {
+        palindromoResult.innerHTML = 'La parola è palindroma';
+    } else {
+        palindromoResult.innerHTML = 'La parola non è palindroma';
+    }
+});
