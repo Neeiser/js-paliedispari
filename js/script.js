@@ -15,22 +15,27 @@
 
 /* Palindroma */
 
-const parolaInputUtente = prompt('Scrivi una parola e ti dirò se è palindroma:');
-
 /* 
 -   Creo una funzione di controllo della parola 
--   Creo una variabile "lunghezzaParola" per calcolare le singole posizioni delle lettere.
--   Creo un ciclo che come condizione limite avrà la lunghezza della parola totale, divisa per 2, 
+-   Creo una variabile "lunghezzaParola" per calcolare successivamente le singole posizioni delle lettere.
+-   Creo una variabile "smezzatoreNumericoParola" per calcolare matematicamente la metà della lunghezza della parola, 
 ciò mi serve per controllare fino alla metà della parola.
 (Esempio: Nella parola "anna" mi basta controllare metà parola an- e confrontarla con l'altra metà -na).
--   Creo condizione:   Se la lettera (selezionata con -charAt-) in posizione "i" NON è uguale alla lettera in posizione speculare, allora ritorna falso.
--                      Se invece è uguale ritorna vero.
+
+-   Creo un ciclo che paragoni la prima lettera con l'ultima (ad ogni iterazione): 
+"letteraParolaAvanti" passa alla successiva e 
+"letteraParolaRitroso" alla precedente.
+
    
 */
-function controlloPalindromo (parola) {
+function controlloPalindromo(parola) {
     let lunghezzaParola = parola.lenght;
-    for (let i=0; i < lunghezzaParola / 2; i++){
-        if (parola.charAt(i) !== parola.charAt(lunghezzaParola - 1 - i)){
+    let smezzatoreNumericoParola = Math.floor(lunghezzaParola/2);
+    let letteraParolaAvanti = parola[i];
+    let letteraParolaRitroso = parola[len - 1 - i];
+
+    for ( let i = 0; i < smezzatoreNumericoParola; i++){
+        if (letteraParolaAvanti !== letteraParolaRitroso){
             return false;
         }
     }
