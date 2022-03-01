@@ -15,20 +15,6 @@
 
 /* Palindroma */
 
-/* 
-
--   Creo una funzione di controllo della parola 
--   Creo una variabile "lunghezzaParola" per calcolare successivamente le singole posizioni delle lettere.
--   Creo una variabile "smezzatoreNumericoParola" per calcolare matematicamente la metà della lunghezza della parola, 
-ciò mi serve per controllare fino alla metà della parola.
-(Esempio: Nella parola "anna" mi basta controllare metà parola an- e confrontarla con l'altra metà -na).
-
--   Creo un ciclo che paragoni la prima lettera con l'ultima (ad ogni iterazione): 
-    "letteraParolaAvanti" passa alla successiva e 
-    "letteraParolaRitroso" alla precedente.
-
-*/
-
 const palindromoInput = document.getElementById('palindromo-input');
 const palindromoBtn = document.getElementById('palindromo-btn');
 const palindromoResult = document.getElementById('palindromo-risultato');
@@ -36,7 +22,17 @@ const palindromoResult = document.getElementById('palindromo-risultato');
 
 
 function controlloPalindromo(parola) {
-    
+    parola = parola.toLowerCase();
+    let lunghezzaParola= parola.length;
+
+    for (let i = 0; i < lunghezzaParola/2; i++){ /* Spezzo la parola a metà */
+        let reverseParola = parola[lunghezzaParola - 1 - i] /* inverto la parola per confrontarla dopo */
+
+        if (parola[i] !== reverseParola) { /* se la lettera della parola non è identica al suo opposto, ritorna false */
+            return false;
+        }
+    }
+    return true; /* Se passa il test dell'if sopra*/
 }
 
 
