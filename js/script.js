@@ -18,10 +18,10 @@
 const palindromoInput = document.getElementById('palindromo-input');
 const palindromoBtn = document.getElementById('palindromo-btn');
 const palindromoResult = document.getElementById('palindromo-risultato');
-
-
+    
 
 function controlloPalindromo(parola) {
+    parola = parola.toLowerCase();
     let lunghezzaParola= parola.length;
 
     for (let i = 0; i < lunghezzaParola/2; i++){ /* Spezzo la parola a metà */
@@ -38,7 +38,7 @@ function controlloPalindromo(parola) {
 palindromoBtn.addEventListener ('click', function(){
     
 
-    if (controlloPalindromo(palindromoInput==true)) {
+    if () {
         palindromoResult.innerHTML = 'La parola è palindroma';
     } else {
         palindromoResult.innerHTML = 'La parola non è palindroma';
