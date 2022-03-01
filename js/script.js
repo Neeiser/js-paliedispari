@@ -18,29 +18,25 @@
 const palindromoInput = document.getElementById('palindromo-input');
 const palindromoBtn = document.getElementById('palindromo-btn');
 const palindromoResult = document.getElementById('palindromo-risultato');
+
+function palindromoFase1(parola) {
     
+    let parolaReversed = parola.split('').reverse().join('');
+    let validator;
 
-function controlloPalindromo(parola) {
-    parola = parola.toLowerCase();
-    let lunghezzaParola= parola.length;
-
-    for (let i = 0; i < lunghezzaParola/2; i++){ /* Spezzo la parola a metà */
-        let reverseParola = parola[lunghezzaParola - 1 - i] /* inverto la parola per confrontarla dopo */
-
-        if (parola[i] !== reverseParola) { /* se la lettera della parola non è identica al suo opposto, ritorna false */
-            return false;
-        }
-    }
-    return true; /* Se passa il test dell'if sopra*/
-}
-
-
-palindromoBtn.addEventListener ('click', function(){
-    
-
-    if () {
-        palindromoResult.innerHTML = 'La parola è palindroma';
+    if(parola === parolaReversed) {
+        validator = true
     } else {
-        palindromoResult.innerHTML = 'La parola non è palindroma';
+        validator = false
     }
-});
+    return validator
+};
+
+palindromoBtn.addEventListener('click', function(){
+    let textInputPalindromo = palindromoFase1(palindromoInput.value)
+    if(textInputPalindromo) {
+        palindromoResult.innerHTML = 'La parola è palindroma'
+    } else {
+        palindromoResult.innerHTML = 'La parola non è palindroma'
+    }
+})
