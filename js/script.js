@@ -23,7 +23,9 @@ function palindromoFase1(parola) {
 };
 
 palindromoBtn.addEventListener('click', function(){
+    
     let textInputPalindromo = palindromoFase1(palindromoInput.value)
+
     if(textInputPalindromo) {
         palindromoResult.innerHTML = 'La parola è palindroma'
     } else {
