@@ -14,14 +14,12 @@ const palindromoResult = document.getElementById('palindromo-risultato');
 function palindromoFase1(parola) {
 
     let parolaReversed = parola.split('').reverse().join('');
-    let validator;
 
     if(parola === parolaReversed) {
-        validator = true
+        return true
     } else {
-        validator = false
+        return false
     }
-    return validator
 };
 
 palindromoBtn.addEventListener('click', function(){
@@ -45,7 +43,20 @@ Pari o dispari
 - Dichiariamo chi ha vinto. 
 */
 
+const numeroUser = document.getElementById('numero-user');
+const pariBtn = document.getElementById('pari-btn');
+const dispariBtn = document.getElementById('dispari-btn');
+const gameResult = document.getElementById('game-result');
+
 function random(min, max) {
     numeroRandom = Math.floor(Math.random() * (max - min) ) + min;
     return numeroRandom;
 };
+
+pariBtn.addEventListener('click', function(){
+
+})
+
+dispariBtn.addEventListener('click', function(){
+    
+})
